@@ -1,0 +1,268 @@
+\doxysection{Database\+Manager Class Reference}
+\hypertarget{classDatabaseManager}{}\label{classDatabaseManager}\index{DatabaseManager@{DatabaseManager}}
+
+
+Clase encargada de administrar la base de datos.  
+
+
+
+
+{\ttfamily \#include $<$Database\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatabaseManager_aa162d97472e6c31a4e873adda435dbb6}{Database\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063}{\texorpdfstring{$\sim$}{\string~}\+Database\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_a8645a2cade4b739f9853c627d7732ac3}{init}} (const std\+::string \&filename="{}iot.\+db"{})
+\begin{DoxyCompactList}\small\item\em Inicializa la base de datos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_a8bad7659211ac2ba23ea5a505f65916c}{create\+\_\+user}} (const std\+::string \&username, const std\+::string \&password, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Crea un usuario nuevo. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classUser}{User}} $>$ \mbox{\hyperlink{classDatabaseManager_aef6903b5a09282a70cd1e52254252acf}{verify\+\_\+user}} (const std\+::string \&username, const std\+::string \&password, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Verifica credenciales de usuario. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_a4290b99b270d26b70cd533657b4e34f7}{add\+\_\+device}} (const \mbox{\hyperlink{classDevice}{Device}} \&d, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Agrega un dispositivo. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ \mbox{\hyperlink{classDatabaseManager_a2c127822b48cd3bdfe11a748dcd73468}{get\+\_\+devices}} (int user\+\_\+id, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Obtiene dispositivos de un usuario. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_a616db79823232a5022b4f419fc51d57b}{delete\+\_\+device}} (int id, int user\+\_\+id, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Elimina un dispositivo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_a184a0a00a6ab90e2d862b96dbfad94de}{update\+\_\+status}} (int device\+\_\+id, const std\+::string \&status, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Actualiza estado del dispositivo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatabaseManager_af23241288ca2cdc2cd8cfd431e61c454}{add\+\_\+event}} (int device\+\_\+id, const std\+::string \&event, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Agrega un evento al historial. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ \mbox{\hyperlink{classDatabaseManager_ab627ea04c5aeb99e66cd0ab93a69ab23}{get\+\_\+events}} (int device\+\_\+id, std\+::string \&out\+\_\+err)
+\begin{DoxyCompactList}\small\item\em Obtiene historial de eventos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase encargada de administrar la base de datos. 
+
+Permite\+:
+\begin{DoxyItemize}
+\item Crear usuarios
+\item Verificar autenticación
+\item Gestionar dispositivos
+\item Registrar eventos
+\item Consultar historial 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDatabaseManager_aa162d97472e6c31a4e873adda435dbb6}\label{classDatabaseManager_aa162d97472e6c31a4e873adda435dbb6} 
+\index{DatabaseManager@{DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily Database\+Manager\+::\+Database\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\Hypertarget{classDatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063}\label{classDatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063} 
+\index{DatabaseManager@{DatabaseManager}!````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}}
+\index{````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DatabaseManager()}{\string~DatabaseManager()}}
+{\footnotesize\ttfamily Database\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Database\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDatabaseManager_a4290b99b270d26b70cd533657b4e34f7}\label{classDatabaseManager_a4290b99b270d26b70cd533657b4e34f7} 
+\index{DatabaseManager@{DatabaseManager}!add\_device@{add\_device}}
+\index{add\_device@{add\_device}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{add\_device()}{add\_device()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::add\+\_\+device (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDevice}{Device}} \&}]{d,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Agrega un dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Dispositivo. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si fue agregado. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_af23241288ca2cdc2cd8cfd431e61c454}\label{classDatabaseManager_af23241288ca2cdc2cd8cfd431e61c454} 
+\index{DatabaseManager@{DatabaseManager}!add\_event@{add\_event}}
+\index{add\_event@{add\_event}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{add\_event()}{add\_event()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::add\+\_\+event (\begin{DoxyParamCaption}\item[{int}]{device\+\_\+id,  }\item[{const std\+::string \&}]{event,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Agrega un evento al historial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & ID dispositivo. \\
+\hline
+{\em event} & Evento generado. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si fue agregado. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_a8bad7659211ac2ba23ea5a505f65916c}\label{classDatabaseManager_a8bad7659211ac2ba23ea5a505f65916c} 
+\index{DatabaseManager@{DatabaseManager}!create\_user@{create\_user}}
+\index{create\_user@{create\_user}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{create\_user()}{create\_user()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::create\+\_\+user (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Crea un usuario nuevo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nombre de usuario. \\
+\hline
+{\em password} & Contraseña. \\
+\hline
+{\em out\+\_\+err} & Mensaje de error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el usuario fue creado. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_a616db79823232a5022b4f419fc51d57b}\label{classDatabaseManager_a616db79823232a5022b4f419fc51d57b} 
+\index{DatabaseManager@{DatabaseManager}!delete\_device@{delete\_device}}
+\index{delete\_device@{delete\_device}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{delete\_device()}{delete\_device()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::delete\+\_\+device (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{user\+\_\+id,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Elimina un dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del dispositivo. \\
+\hline
+{\em user\+\_\+id} & ID del usuario propietario. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si fue eliminado. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_a2c127822b48cd3bdfe11a748dcd73468}\label{classDatabaseManager_a2c127822b48cd3bdfe11a748dcd73468} 
+\index{DatabaseManager@{DatabaseManager}!get\_devices@{get\_devices}}
+\index{get\_devices@{get\_devices}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{get\_devices()}{get\_devices()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ Database\+Manager\+::get\+\_\+devices (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+id,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Obtiene dispositivos de un usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+id} & ID del usuario. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector de dispositivos. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_ab627ea04c5aeb99e66cd0ab93a69ab23}\label{classDatabaseManager_ab627ea04c5aeb99e66cd0ab93a69ab23} 
+\index{DatabaseManager@{DatabaseManager}!get\_events@{get\_events}}
+\index{get\_events@{get\_events}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{get\_events()}{get\_events()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEvent}{Event}} $>$ Database\+Manager\+::get\+\_\+events (\begin{DoxyParamCaption}\item[{int}]{device\+\_\+id,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Obtiene historial de eventos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & ID dispositivo. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de eventos. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_a8645a2cade4b739f9853c627d7732ac3}\label{classDatabaseManager_a8645a2cade4b739f9853c627d7732ac3} 
+\index{DatabaseManager@{DatabaseManager}!init@{init}}
+\index{init@{init}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename = {\ttfamily "{}iot.db"{}} }\end{DoxyParamCaption})}
+
+
+
+Inicializa la base de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nombre del archivo SQLite. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si se inicializó correctamente. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_a184a0a00a6ab90e2d862b96dbfad94de}\label{classDatabaseManager_a184a0a00a6ab90e2d862b96dbfad94de} 
+\index{DatabaseManager@{DatabaseManager}!update\_status@{update\_status}}
+\index{update\_status@{update\_status}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{update\_status()}{update\_status()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::update\+\_\+status (\begin{DoxyParamCaption}\item[{int}]{device\+\_\+id,  }\item[{const std\+::string \&}]{status,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Actualiza estado del dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & ID dispositivo. \\
+\hline
+{\em status} & Nuevo estado. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si se actualizó. 
+\end{DoxyReturn}
+\Hypertarget{classDatabaseManager_aef6903b5a09282a70cd1e52254252acf}\label{classDatabaseManager_aef6903b5a09282a70cd1e52254252acf} 
+\index{DatabaseManager@{DatabaseManager}!verify\_user@{verify\_user}}
+\index{verify\_user@{verify\_user}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{verify\_user()}{verify\_user()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{classUser}{User}} $>$ Database\+Manager\+::verify\+\_\+user (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{std\+::string \&}]{out\+\_\+err }\end{DoxyParamCaption})}
+
+
+
+Verifica credenciales de usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Usuario. \\
+\hline
+{\em password} & Contraseña. \\
+\hline
+{\em out\+\_\+err} & Error generado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Usuario autenticado. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{DatabaseManager_8h}{Database\+Manager.\+h}}\item 
+src/\mbox{\hyperlink{DatabaseManager_8cpp}{Database\+Manager.\+cpp}}\end{DoxyCompactItemize}

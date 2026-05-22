@@ -1,0 +1,90 @@
+\doxysection{Database\+Manager.\+h}
+\hypertarget{DatabaseManager_8h_source}{}\label{DatabaseManager_8h_source}\index{include/DatabaseManager.h@{include/DatabaseManager.h}}
+\mbox{\hyperlink{DatabaseManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ DATABASE\_MANAGER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DATABASE\_MANAGER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{User_8h}{User.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Device_8h}{Device.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Event_8h}{Event.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabaseManager}{DatabaseManager}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classDatabaseManager_aa162d97472e6c31a4e873adda435dbb6}{DatabaseManager}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classDatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063}{\string~DatabaseManager}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_a8645a2cade4b739f9853c627d7732ac3}{init}}(\textcolor{keyword}{const}\ std::string\&\ filename\ =\ \textcolor{stringliteral}{"{}iot.db"{}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_a8bad7659211ac2ba23ea5a505f65916c}{create\_user}}(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ username,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::optional<User>\ \mbox{\hyperlink{classDatabaseManager_aef6903b5a09282a70cd1e52254252acf}{verify\_user}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ username,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_a4290b99b270d26b70cd533657b4e34f7}{add\_device}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDevice}{Device}}\&\ d,\ std::string\&\ out\_err);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::vector<Device>\ \mbox{\hyperlink{classDatabaseManager_a2c127822b48cd3bdfe11a748dcd73468}{get\_devices}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ user\_id,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_a616db79823232a5022b4f419fc51d57b}{delete\_device}}(}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ user\_id,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_a184a0a00a6ab90e2d862b96dbfad94de}{update\_status}}(}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ device\_id,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ status,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseManager_af23241288ca2cdc2cd8cfd431e61c454}{add\_event}}(}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ device\_id,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ event,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \ \ \ \ std::vector<Event>\ \mbox{\hyperlink{classDatabaseManager_ab627ea04c5aeb99e66cd0ab93a69ab23}{get\_events}}(}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ device\_id,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ \ \ sqlite3*\ db\_;}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{bool}\ execute\_sql(}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ sql,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ std::string\&\ out\_err}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ generate\_salt(\textcolor{keywordtype}{size\_t}\ bytes\ =\ 16);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ sha256\_hex(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ h\_password(}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ password,}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ salt}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{include/mainwindow.h@{include/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DatabaseManager_8h}{DatabaseManager.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Device_8h}{Device.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Event_8h}{Event.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{User_8h}{User.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUi}{Ui}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}};}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classMainWindow}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_2\_clicked();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_clicked();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_10\_clicked();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_16\_clicked();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_11\_clicked();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_12\_clicked();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_22\_clicked();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_23\_clicked();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_26\_clicked();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_24\_clicked();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_25\_clicked();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ actualizarEstadoSimulado();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classDatabaseManager}{DatabaseManager}}\ db\_;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::optional<User>\ current\_user\_;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ std::optional<int>\ id\_dispositivo\_seleccionado\_;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<Device>\ lista\_dispositivos\_actuales\_;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ QTimer*\ simuladorTimer\_;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ showError(\textcolor{keyword}{const}\ QString\&\ msg);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ showInfo(\textcolor{keyword}{const}\ QString\&\ msg);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ refrescarListaDispositivos();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ guardarHistorialCSV();}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
